@@ -43,16 +43,17 @@ export const scrapeLinkedInProfile = async (url) => {
   const apiKey = process.env.PROXYCURL_API_KEY;
 
   if (!apiKey) {
-    if (process.env.NODE_ENV === 'production') {
-      throw new Error(
-        'LinkedIn import requires a Proxycurl API key. Set PROXYCURL_API_KEY in your .env file. ' +
-        'Get a free key (10 credits) at https://proxycurl.com.'
+    const env = process.env.NODE_ENV;
+    if (env === 'development' || env === 'test') {
+      console.warn(
+        '⚠️  PROXYCURL_API_KEY is not set — returning mock LinkedIn profile (development/test only).'
       );
+      return getMockProfile(url);
     }
-    console.warn(
-      '⚠️  PROXYCURL_API_KEY is not set — returning mock LinkedIn profile (development only).'
+    throw new Error(
+      'LinkedIn import requires a Proxycurl API key. Set PROXYCURL_API_KEY in your .env file. ' +
+      'Get a free key (10 credits) at https://proxycurl.com.'
     );
-    return getMockProfile(url);
   }
 
   const requestUrl = `${PROXYCURL_ENDPOINT}?url=${encodeURIComponent(url)}&fallback_to_cache=on-error&use_cache=if-present`;
