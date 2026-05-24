@@ -2,6 +2,30 @@ import React from 'react';
 import {User, Brain, Github, FlaskConical } from 'lucide-react';
 
 export default function About() {
+  const features = [
+    {
+      title: "Problem Solving",
+      description: "DSA & logical thinking",
+      icon: <Brain size={20} />,
+      bgColor: "bg-indigo-100",
+      textColor: "text-indigo-500"
+    },
+    {
+      title: "Open Source",
+      description: "Learning through contribution",
+      icon: <Github size={20} />,
+      bgColor: "bg-teal-100",
+      textColor: "text-teal-500"
+    },
+    {
+      title: "Research Projects",
+      description: "Exploring AI & data science",
+      icon: <FlaskConical size={20} />,
+      bgColor: "bg-rose-100",
+      textColor: "text-rose-500"
+    }
+  ];
+
   return (
     <>
     <section className="w-full py-20 px-6 md:px-12 lg:px-24 bg-gradient-to-r from-slate-50 to-purple-50 overflow-hidden">
@@ -39,40 +63,17 @@ export default function About() {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            
-            {/* Card 1 */}
-            <div className="flex items-center gap-4 p-4 bg-white/50 backdrop-blur-md rounded-2xl border border-white/80 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default">
-              <div className="p-3 bg-indigo-100 text-indigo-500 rounded-xl">
-                <Brain size={20} />
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-center gap-4 p-4 bg-white/50 backdrop-blur-md rounded-2xl border border-white/80 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default">
+                <div className={`p-3 rounded-xl ${feature.bgColor} ${feature.textColor}`}>
+                  {feature.icon}
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-slate-700 text-sm">{feature.title}</h4>
+                  <p className="text-xs text-slate-400">{feature.description}</p>
+                </div>
               </div>
-              <div className="text-left">
-                <h4 className="font-semibold text-slate-700 text-sm">Problem Solving</h4>
-                <p className="text-xs text-slate-400">DSA & logical thinking</p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="flex items-center gap-4 p-4 bg-white/50 backdrop-blur-md rounded-2xl border border-white/80 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default">
-              <div className="p-3 bg-teal-100 text-teal-500 rounded-xl">
-                <Github size={20} />
-              </div>
-              <div className="text-left">
-                <h4 className="font-semibold text-slate-700 text-sm">Open Source</h4>
-                <p className="text-xs text-slate-400">Learning through contribution</p>
-              </div>
-            </div>
-            
-            {/* Card 3 */}
-            <div className="flex items-center gap-4 p-4 bg-white/50 backdrop-blur-md rounded-2xl border border-white/80 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 cursor-default">
-              <div className="p-3 bg-rose-100 text-rose-500 rounded-xl">
-                <FlaskConical size={20} />
-              </div>
-              <div className="text-left">
-                <h4 className="font-semibold text-slate-700 text-sm">Research Projects</h4>
-                <p className="text-xs text-slate-400">Exploring AI & data science</p>
-              </div>
-            </div>
-
+            ))}
           </div>
         </div>
 
