@@ -248,7 +248,7 @@ export default function Hero() {
                   <span className="h-2 w-2 rounded-full bg-cyan-300" />
                   Profile Summary
                 </div>
-                <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-white">Ava Thompson — Frontend Developer</h2>
+                <h2 className="mt-5 text-2xl font-extrabold tracking-tight text-white">Ava Thompson — Backend Developer</h2>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-7 text-slate-300">
                   Dedicated to crafting scalable frontend applications with strong attention to design systems, performance, and user experience. Comfortable shipping components, building design systems, and improving UX across products.
                 </p>
