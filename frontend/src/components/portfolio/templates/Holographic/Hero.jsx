@@ -44,15 +44,15 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-              <button className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_45px_rgba(168,85,247,0.35)]">
+              <a href="#portfolio" aria-label="Explore the portfolio section" className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_30px_rgba(34,211,238,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_45px_rgba(168,85,247,0.35)]">
                 Explore Portfolio
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </button>
+              </a>
 
-              <button className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/6 px-6 py-3.5 font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/35 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(56,189,248,0.14)]">
+              <a href="#work" aria-label="View work examples" className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/6 px-6 py-3.5 font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-300/35 hover:bg-white/10 hover:shadow-[0_0_28px_rgba(56,189,248,0.14)]">
                 View Work
                 <Zap className="h-4 w-4 text-cyan-300" />
-              </button>
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
