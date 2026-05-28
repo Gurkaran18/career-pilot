@@ -1,3 +1,10 @@
+## [1.51.1](https://github.com/anurag3407/career-pilot/compare/v1.51.0...v1.51.1) (2026-05-28)
+
+
+### Bug Fixes
+
+* clean up PostEditor component and add poll functionality; update PostCard layout; change button to motion.button in PostsFeed ([876f813](https://github.com/anurag3407/career-pilot/commit/876f813b18588b5eecbe364adef17ededa2254a5))
+
 # [1.51.0](https://github.com/anurag3407/career-pilot/compare/v1.50.0...v1.51.0) (2026-05-27)
 
 
