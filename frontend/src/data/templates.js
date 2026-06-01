@@ -1488,13 +1488,14 @@ export const templates = [
     "id": "One_Page_Scroll",
     "title": "One Page Scroll",
     "category": "Portfolio",
-    "colorScheme": "Dark",
-    "layout": "Grid",
-    "author": "System",
-    "views": 1123,
-    "rating": 4.5,
+    "colorScheme": "Light",
+    "layout": "Minimal",
+    "author": "Advik Divekar",
+    "views": 2600,
+    "rating": 4.9,
     "image": "/template-previews/One_Page_Scroll.png",
-    "createdAt": "2026-05-01"
+    "createdAt": "2026-05-31",
+    "isComplete": true
   },
   {
     "id": "Origami_Paper",

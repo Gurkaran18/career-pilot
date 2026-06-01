@@ -99,7 +99,7 @@ import MemphisPop from './components/portfolio/templates/Memphis_Pop/index.jsx';
 import CassetteMixtape from './components/portfolio/templates/Cassette_Mixtape/index.jsx';
 import MagneticDock from './components/portfolio/templates/Magnetic_Dock/index.jsx';
 import Hero from './components/portfolio/templates/Magazine_Editorial/Hero';
-import MorphingBlobs from './components/portfolio/templates/Morphing_Blobs/index.jsx';
+import OnePageScroll from './components/portfolio/templates/One_Page_Scroll/index.jsx';
 import TestSocialLinks from './pages/TestSocialLinks';
 
 function LoadingScreen({ label }) {
@@ -429,7 +429,7 @@ function AppRoutes() {
 
         {/* Catch-All Route */}
         <Route path="*" element={<NotFound />} />
-        <Route path="/templates/morphing-blobs" element={<MorphingBlobs />} />
+        <Route path="/templates/one-page-scroll" element={<OnePageScroll />} />
       </Routes>
     </BrowserRouter>
   );
