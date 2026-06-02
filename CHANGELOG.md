@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/advikdivekar/career-pilot-advik/compare/v1.1.0...v1.1.1) (2026-06-02)
+
+
+### Bug Fixes
+
+* add missing imports for HolographicAbout, GeometricShapesAbout, CulinaryAbout, TechStartupHero and Desert_Dunes hooks/icons ([8d2a243](https://github.com/advikdivekar/career-pilot-advik/commit/8d2a2435e0d2ed153bdef96d44f642229f056572))
+
 # [1.1.0](https://github.com/advikdivekar/career-pilot-advik/compare/v1.0.1...v1.1.0) (2026-06-02)
 
 
