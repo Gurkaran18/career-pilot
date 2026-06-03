@@ -1,3 +1,10 @@
+# [1.130.0](https://github.com/anurag3407/career-pilot/compare/v1.129.0...v1.130.0) (2026-06-03)
+
+
+### Features
+
+* implement responsive mobile navigation and layout rendering [#465](https://github.com/anurag3407/career-pilot/issues/465) ([b6c6e09](https://github.com/anurag3407/career-pilot/commit/b6c6e09eaaa3c264504b038bf13d796e7235fced))
+
 # [1.129.0](https://github.com/anurag3407/career-pilot/compare/v1.128.1...v1.129.0) (2026-06-02)
 
 
