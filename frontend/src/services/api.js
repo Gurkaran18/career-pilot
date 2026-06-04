@@ -5,6 +5,7 @@ const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 // Helper to get auth headers
 async function getAuthHeaders() {
+  console.log("Current User:", auth?.currentUser);
   const user = auth?.currentUser
   if (!user) throw new Error('Not authenticated')
 

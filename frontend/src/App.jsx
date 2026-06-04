@@ -270,15 +270,13 @@ function AppRoutes() {
     </ProtectedRoute>
   } 
 />
-        <Route 
-  path="/dashboard/analytics" 
+        <Route
+  path="/dashboard/analytics"
   element={
-    <ProtectedRoute>
-      <Suspense fallback={<LoadingScreen label="Loading Analytics..." />}>
-        <Analytics />
-      </Suspense>
-    </ProtectedRoute>
-  } 
+    <Suspense fallback={<LoadingScreen label="Loading Analytics..." />}>
+      <Analytics />
+    </Suspense>
+  }
 />
         <Route path="/upload" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Upload..." />}><Upload /></Suspense></ProtectedRoute>} />
         <Route 
