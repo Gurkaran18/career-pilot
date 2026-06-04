@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState, useRef, useEffect, Suspense, useMemo } from "react";
+import { useTheme } from "../hooks/useTheme";
 import Navbar from "../components/Navbar";
 import DeployModal from "../components/portfolio/DeployModal";
 import ThemeSelector from "../components/portfolio/ThemeSelector";
@@ -10,6 +11,21 @@ import ChooseAdventurePortfolio from "../components/portfolio/templates/Choose_A
 import WeatherMood from "../components/portfolio/templates/Weather_Mood/index";
 import SwissTypography from "../components/portfolio/templates/Swiss_Typography/index";
 import DesertDunes from "../components/portfolio/templates/Desert_Dunes/index";
+import { templates } from '../data/templates';
+import { motion, AnimatePresence } from "framer-motion";
+import { Moon, Sun, ChevronDown, Check, Eye, Star, Sparkles, X } from "lucide-react";
+import LiquidGlass from "../components/portfolio/templates/Liquid_Glass/index";
+import MidnightGradient from "../components/portfolio/templates/Midnight_Gradient/index";
+import PlayingCardsPortfolio from "../components/portfolio/templates/Playing_Cards";
+import CherryBlossom from "../components/portfolio/templates/Cherry_Blossom/index";
+import PsychedelicSwirl from "../components/portfolio/templates/Psychedelic_Swirl/index";
+import MemphisPop from "../components/portfolio/templates/Memphis_Pop/index";
+import CassetteMixtape from "../components/portfolio/templates/Cassette_Mixtape/index";
+import TypewriterEffect from "../components/portfolio/templates/Typewriter_Effect/index";
+import ChromaticGlitch from "../components/portfolio/templates/Chromatic_Glitch/index";
+import MagneticDock from "../components/portfolio/templates/Magnetic_Dock/index";
+import { useSearchParams } from "react-router-dom";
+import MorphingBlobs from "../components/portfolio/templates/Morphing_Blobs/index";
 
 /* TemplatePreviewFrame — contains each full portfolio template in a
    sandboxed scrollable box. The key trick: CSS `transform` on the outer
@@ -62,7 +78,6 @@ import { useSearchParams } from "react-router-dom";
 // import ChooseAdventurePortfolio from "../components/portfolio/templates/Choose_Adventure/index";
 // import RetroProjects from "../components/portfolio/templates/2D_Retro_8bit/Projects";
 // import FantasyRPGProjects from "../components/portfolio/templates/Fantasy_RPG/Projects";
-import MorphingBlobs from "../components/portfolio/templates/Morphing_Blobs/index";
 
 
 function FilterSelect({ value, onChange, options, className = "" }) {
@@ -791,6 +806,8 @@ const [hoveredCard, setHoveredCard] = useState(null);
         </div>
       </div>
 
+            </div>
+      </div>
     </div>
   );
 }
