@@ -1,3 +1,10 @@
+# [1.158.0](https://github.com/anurag3407/career-pilot/compare/v1.157.0...v1.158.0) (2026-06-05)
+
+
+### Features
+
+* Implement CI/CD Pipeline Detector with core logic and error handling ([b1b0154](https://github.com/anurag3407/career-pilot/commit/b1b0154c7a388c564a89d3bccbf71acf4f332b8c))
+
 # [1.157.0](https://github.com/anurag3407/career-pilot/compare/v1.156.1...v1.157.0) (2026-06-05)
 
 
