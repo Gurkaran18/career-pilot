@@ -1,3 +1,10 @@
+# [1.157.0](https://github.com/anurag3407/career-pilot/compare/v1.156.1...v1.157.0) (2026-06-05)
+
+
+### Features
+
+* implement glassmorphism about section ([5bcad62](https://github.com/anurag3407/career-pilot/commit/5bcad62e00965c738d4bc499c0c9a940da26cdd6))
+
 ## [1.156.1](https://github.com/anurag3407/career-pilot/compare/v1.156.0...v1.156.1) (2026-06-05)
 
 
