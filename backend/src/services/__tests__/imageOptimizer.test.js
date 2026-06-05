@@ -1,0 +1,51 @@
+import assert from 'assert';
+import fs from 'fs/promises';
+import path from 'path';
+import { optimizeBuffer } from '../imageOptimizer.js';
+
+const SAMPLE = path.resolve('tests', 'fixtures', 'sample.jpg');
+
+async function testOptimizeVariants() {
+  let buffer;
+  try {
+    buffer = await fs.readFile(SAMPLE);
+  } catch (e) {
+    const sharpLib = (await import('sharp')).default;
+    buffer = await sharpLib({ create: { width: 200, height: 100, channels: 3, background: { r: 220, g: 220, b: 220 } } }).jpeg().toBuffer();
+  }
+
+  const res = await optimizeBuffer(buffer, { widths: [null, 100], formats: ['webp', 'jpeg'], quality: 70 });
+  assert.ok(res.webp, 'expected webp key');
+  assert.ok(res['webp_100'], 'expected webp_100 key');
+  assert.ok(res.jpeg, 'expected jpeg key');
+  assert.ok(res['jpeg_100'], 'expected jpeg_100 key');
+  assert.ok(res.webp.length > 0);
+  assert.ok(res['webp_100'].length > 0);
+}
+
+async function testInvalidInput() {
+  let threw = false;
+  try {
+    // @ts-ignore
+    await optimizeBuffer('not-a-buffer');
+  } catch (e) {
+    threw = true;
+    assert.ok(e instanceof TypeError);
+  }
+  if (!threw) throw new Error('expected optimizeBuffer to throw on invalid input');
+}
+
+(async () => {
+  try {
+    console.log('Running imageOptimizer tests...');
+    await testOptimizeVariants();
+    console.log('  testOptimizeVariants passed');
+    await testInvalidInput();
+    console.log('  testInvalidInput passed');
+    console.log('All tests passed');
+    process.exit(0);
+  } catch (err) {
+    console.error('Tests failed:', err);
+    process.exit(1);
+  }
+})();
