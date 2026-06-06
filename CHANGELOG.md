@@ -1,3 +1,10 @@
+# [1.168.0](https://github.com/anurag3407/career-pilot/compare/v1.167.0...v1.168.0) (2026-06-06)
+
+
+### Features
+
+* add SEO optimization assistant to deploy modal ([090d6e1](https://github.com/anurag3407/career-pilot/commit/090d6e12622d158f814ea953c0cfd1eeca1e3d42))
+
 # [1.167.0](https://github.com/anurag3407/career-pilot/compare/v1.166.0...v1.167.0) (2026-06-06)
 
 
