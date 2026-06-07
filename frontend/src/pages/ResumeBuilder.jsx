@@ -77,8 +77,7 @@ export default function ResumeBuilder() {
   const [missingKeywords, setMissingKeywords] = useState([])
   const [resumeVersions, setResumeVersions] = useState([])
   const [selectedVersion, setSelectedVersion] = useState(null)
-  const [recommendedSkills, setRecommendedSkills] = useState([])
-  const [recommendedSkills, setRecommendedSkills] = useState([])
+  
 
   useEffect(() => {
   const suggestions = []
@@ -170,10 +169,6 @@ setMissingKeywords(missing)
 
 const suggestions = prioritySkills.filter(
   skill => missing.includes(skill)
-)
-
-setRecommendedSkills(
-  suggestions.slice(0, 4)
 )
 
 setRecommendedSkills(
@@ -1038,6 +1033,19 @@ useEffect(() => {
       </ul>
     </div>
   )}
+</div>
+<div className="mb-6 p-4 rounded-xl border border-border bg-background/50">
+  <h3 className="font-semibold mb-3">
+    Section Completion Status
+  </h3>
+
+  <div className="space-y-2">
+    <div>{personal.name && personal.email ? "✅" : "❌"} Personal Info</div>
+    <div>{education.some(e => e.school) ? "✅" : "❌"} Education</div>
+    <div>{experience.some(e => e.title) ? "✅" : "❌"} Experience</div>
+    <div>{projects.some(p => p.name) ? "✅" : "❌"} Projects</div>
+    <div>{skills.trim() ? "✅" : "❌"} Skills</div>
+  </div>
 </div>
             <div className="mb-6 p-4 rounded-xl border border-border bg-background/50">
   <div className="flex justify-between items-center mb-2">
