@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/Gurkaran18/career-pilot/compare/v1.0.2...v1.1.0) (2026-06-08)
+
+
+### Features
+
+* add smart resume content consistency checker [#3351](https://github.com/Gurkaran18/career-pilot/issues/3351) ([85ce056](https://github.com/Gurkaran18/career-pilot/commit/85ce056ee40b6b6e5b2ad375aa53b322c7595e3c))
+* Add top-level AppErrorBoundary to catch unhandled route errors ([8a056d2](https://github.com/Gurkaran18/career-pilot/commit/8a056d21873219bd4f7f4527a0576a6ce5c913ec)), closes [#1011](https://github.com/Gurkaran18/career-pilot/issues/1011)
+* implement brutalist zine collage portfolio template [#3258](https://github.com/Gurkaran18/career-pilot/issues/3258) ([5a8330f](https://github.com/Gurkaran18/career-pilot/commit/5a8330fbf357f0a87d25e942484e75fc8e9673c5))
+
 ## [1.0.2](https://github.com/Gurkaran18/career-pilot/compare/v1.0.1...v1.0.2) (2026-06-08)
 
 
