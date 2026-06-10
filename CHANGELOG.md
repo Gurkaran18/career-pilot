@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Gurkaran18/career-pilot/compare/v1.1.0...v1.1.1) (2026-06-10)
+
+
+### Bug Fixes
+
+* **ci:** update osv-scanner-action version to v1.9.0 ([b5eb9d2](https://github.com/Gurkaran18/career-pilot/commit/b5eb9d24adaeff47900399ccade4245f313b2a54))
+
 # [1.1.0](https://github.com/Gurkaran18/career-pilot/compare/v1.0.2...v1.1.0) (2026-06-08)
 
 
