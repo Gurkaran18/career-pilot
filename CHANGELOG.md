@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Gurkaran18/career-pilot/compare/v1.1.1...v1.1.2) (2026-06-10)
+
+
+### Bug Fixes
+
+* **ci:** use correct osv-scanner-action path and v2.3.8 ([df8369f](https://github.com/Gurkaran18/career-pilot/commit/df8369fe3be894c73ad67d1c1fc9662b0e892734))
+
 ## [1.1.1](https://github.com/Gurkaran18/career-pilot/compare/v1.1.0...v1.1.1) (2026-06-10)
 
 
