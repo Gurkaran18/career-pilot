@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Gurkaran18/career-pilot/compare/v1.1.2...v1.1.3) (2026-06-10)
+
+
+### Bug Fixes
+
+* **ci:** lock osv-scanner-action to verified v1.9.0 path ([cd5e10a](https://github.com/Gurkaran18/career-pilot/commit/cd5e10ae7c8c67b4c4048adbc6582cf94e2a46a2))
+
 ## [1.1.2](https://github.com/Gurkaran18/career-pilot/compare/v1.1.1...v1.1.2) (2026-06-10)
 
 
