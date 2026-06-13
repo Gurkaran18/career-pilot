@@ -28,6 +28,7 @@ export const templates = [
     "createdAt": "2026-06-13",
     "isComplete": true
   },
+  {
     "id": "Endless_Runner_Minigame",
     "title": "Endless Runner Minigame",
     "category": "Portfolio",
@@ -40,11 +41,11 @@ export const templates = [
     "createdAt": "2026-06-11",
     "isComplete": true
   },
+  {
     "image": "/template-previews/Endless_Runner_Minigame.png",
     "createdAt": "2026-06-12",
     isComplete: true
-}
-,
+  },
   {
     "id": "Fluid_Simulation_3D_WebGL",
     "title": "Fluid Simulation 3D WebGL",
