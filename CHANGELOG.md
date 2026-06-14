@@ -1,3 +1,10 @@
+# [1.242.0](https://github.com/anurag3407/career-pilot/compare/v1.241.0...v1.242.0) (2026-06-14)
+
+
+### Features
+
+* add resume section reordering suggestions ([88f5c1c](https://github.com/anurag3407/career-pilot/commit/88f5c1cd6695d73952c7595624a25550904ac74f))
+
 # [1.241.0](https://github.com/anurag3407/career-pilot/compare/v1.240.0...v1.241.0) (2026-06-14)
 
 
