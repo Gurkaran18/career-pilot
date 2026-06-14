@@ -1,3 +1,17 @@
+# [1.237.0](https://github.com/anurag3407/career-pilot/compare/v1.236.0...v1.237.0) (2026-06-14)
+
+
+### Features
+
+* implement crossword puzzle word fill portfolio template with global context binding ([90c1c3f](https://github.com/anurag3407/career-pilot/commit/90c1c3f648dcfdeecc256b55a661649483f47f9b))
+
+# [1.236.0](https://github.com/anurag3407/career-pilot/compare/v1.235.0...v1.236.0) (2026-06-14)
+
+
+### Features
+
+* **portfolio:** add Zen Bamboo Forest Wind template (closes [#3172](https://github.com/anurag3407/career-pilot/issues/3172)) ([511e792](https://github.com/anurag3407/career-pilot/commit/511e792cc3088f50852222d0f19d681c551cca31))
+
 # [1.235.0](https://github.com/anurag3407/career-pilot/compare/v1.234.0...v1.235.0) (2026-06-13)
 
 

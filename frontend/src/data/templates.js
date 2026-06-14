@@ -1,5 +1,18 @@
 export const templates = [
   {
+    "id": "Zen_Bamboo_Forest_Wind",
+    "title": "Zen Bamboo Forest Wind",
+    "category": "Portfolio",
+    "colorScheme": "Light",
+    "layout": "Scroll",
+    "author": "Anurag3407",
+    "views": 99999,
+    "rating": 5.0,
+    "image": "/templates/Zen_Bamboo_Forest_Wind.png",
+    "createdAt": "2026-06-14",
+    "isComplete": true
+  },
+  {
     "id": "Cartographer_Antiquity_Map_Room",
     "title": "Cartographer Antiquity Map Room",
     "category": "Portfolio",
@@ -110,6 +123,19 @@ export const templates = [
   "isComplete": true
 },
   {
+    "id": "Forensic_Investigator_Desk",
+    "title": "Forensic Investigator Desk",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Interactive",
+    "author": "ShaktiShrey-01",
+    "views": 0,
+    "rating": 0,
+    "image": "/template-previews/Forensic_investigator_desk.png",
+    "createdAt": "2026-06-11",
+    "isComplete": true
+  },
+  {
     "id": "IKEA_Assembly_Manual",
     "title": "IKEA Assembly Manual",
     "category": "Portfolio",
@@ -144,6 +170,7 @@ export const templates = [
     "image": "/template-previews/Endless_Runner_Minigame.png",
     "createdAt": "2026-06-12",
     "isComplete": true
+    "isComplete": true,
   },
   {
     "id": "Git_Commit_History_Tree",
@@ -685,11 +712,6 @@ export const templates = [
     image: "/template-previews/Zine_Collage.png",
     createdAt: "2026-06-08",
     description: "An asymmetric, high-contrast scrapbook magazine layout featuring heavy ink borders, rotated clipping frames, and retro label-maker accents.",
-    author: "System",
-    views: 0,
-    rating: 4.5,
-    image: "/template-previews/Zine_Collage.png",
-    createdAt: "2026-06-01",
     isComplete: true
   },
   
@@ -2916,6 +2938,15 @@ export const templates = [
     "isComplete": true
   },
   {
+    "id": "Crossword_Puzzle_Word_Fill",
+    "title": "Crossword Puzzle Word Fill",
+    "category": "Portfolio",
+    "colorScheme": "Dark",
+    "layout": "Crossword_Puzzle_Word_Fill",
+    "author": "System",
+    "views": 1050,
+    "rating": 4.8,
+    "image": "/template-previews/crossword_puzzle_word_fill.png",
     "id": "Autumn_Forest_Leaf_Fall",
     "title": "Autumn Forest Leaf Fall",
     "category": "Portfolio",
