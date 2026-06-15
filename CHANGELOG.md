@@ -1,3 +1,11 @@
+# [1.247.0](https://github.com/anurag3407/career-pilot/compare/v1.246.1...v1.247.0) (2026-06-15)
+
+
+### Features
+
+* add portfolio project highlight recommendations ([255429b](https://github.com/anurag3407/career-pilot/commit/255429b1adb94b2f997d4061b0a3ad3fdc11972c))
+* add smart certification recommendation assistant ([168a95a](https://github.com/anurag3407/career-pilot/commit/168a95ab27a7a34cbd40be9c412416a9ab24ef0e))
+
 ## [1.246.1](https://github.com/anurag3407/career-pilot/compare/v1.246.0...v1.246.1) (2026-06-15)
 
 
