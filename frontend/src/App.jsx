@@ -34,6 +34,7 @@ import GlassmorphismTemplate from "./components/portfolio/templates/Glassmorphis
 
 import JobTracker from './pages/JobTracker';
 
+const Outreach = lazy(() => import('./pages/Outreach'));
 const Community = lazy(() => import('./pages/Community'));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
@@ -73,6 +74,8 @@ const FellowshipChat = lazy(() => import("./pages/fellowship/FellowshipChat"));
 const AdminLayout = lazy(() => import("./pages/admin/layout/AdminLayout"));
 const AdminDashboard = lazy(() => import("./pages/admin/views/AdminDashboard"));
 const AdminUsers = lazy(() => import("./pages/admin/views/AdminUsers"));
+const AdminLogins = lazy(() => import("./pages/admin/views/AdminLogins"));
+const AdminBugs = lazy(() => import("./pages/admin/views/AdminBugs"));
 
 import { NotFound } from './pages';
 
@@ -122,6 +125,11 @@ import Book_Page_Flip_3D_Render from './components/portfolio/templates/Book_Page
 import IKEA_Assembly_Manual from './components/portfolio/templates/IKEA_Assembly_Manual/index.jsx';
 import MichelinStarChefPlating from './components/portfolio/templates/Michelin_Star_Chef_Plating/index.jsx';
 import SommelierWineCellarRacks from './components/portfolio/templates/Sommelier_Wine_Cellar_Racks/index.jsx';
+import SharedResumeView from './pages/SharedResumeView.jsx'
+import MinimalDarkFluid from './components/portfolio/templates/Minimal_Dark_Fluid/index.jsx';
+import TerminalSkills from './components/portfolio/templates/Terminal_Skills/index.jsx';
+import ChiragChrgTheme from './components/portfolio/templates/ChiragChrg_Theme/index.jsx';
+import InspiredDevJadiya from "./components/portfolio/templates/Inspired_Dev_Jadiya";
 
 function LoadingScreen({ label }) {
   return (
@@ -261,6 +269,7 @@ function AppRoutes() {
         {/* Template Gallery Route (Registered at /templates) */}
         <Route path="/templates" element={<TemplateGallery />} />
         <Route path="/preview/:templateId" element={<TemplatePreviewOnly />} />
+        <Route path="/preview-inspired-dev-jadiya" element={<InspiredDevJadiya />} />
         <Route path="/cover-letter" element={<CoverLetter />} />
         
 
@@ -295,6 +304,9 @@ function AppRoutes() {
         <Route path="/templates/ikea-assembly-manual" element={<IKEA_Assembly_Manual />} />
         <Route path="/templates/michelin-star-chef-plating" element={<MichelinStarChefPlating />} />
         <Route path="/templates/sommelier-wine-cellar-racks" element={<SommelierWineCellarRacks />} />
+        <Route path="/templates/minimal-dark-fluid" element={<MinimalDarkFluid />} />
+        <Route path="/templates/terminal-skills" element={<TerminalSkills />} />
+        <Route path="/templates/chiragchrg-theme" element={<ChiragChrgTheme />} />
         {/* Core Protected Routes */}
         <Route 
   path="/dashboard" 
@@ -316,7 +328,8 @@ function AppRoutes() {
 />
         <Route path="/upload" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Upload..." />}><Upload /></Suspense></ProtectedRoute>} />
         <Route 
-  path="/resume-builder" 
+  path="/shared/:shareToken" element={<SharedResumeView />} />
+          <Route path="/resume-builder" 
   element={
     <ProtectedRoute>
       <Suspense fallback={<LoadingScreen label="Loading Resume Builder..." />}>
@@ -327,7 +340,8 @@ function AppRoutes() {
 />
         <Route path="/text-to-resume" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Text to Resume..." />}><TextToResume /></Suspense></ProtectedRoute>} />
         <Route path="/enhance/:resumeId" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Resume Enhancer..." />}><Enhance /></Suspense></ProtectedRoute>} />
-        <Route path="/resume/:resumeId" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Resume..." />}><ResumeView /></Suspense></ProtectedRoute>} />
+        <Route path="/shared/:shareToken" element={<SharedResumeView />} />
+          <Route path="/resume/:resumeId" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Resume..." />}><ResumeView /></Suspense></ProtectedRoute>} />
         <Route 
   path="/jobs" 
   element={
@@ -340,6 +354,7 @@ function AppRoutes() {
 />
         <Route path="/job-alerts" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Job Alerts..." />}><JobAlerts /></Suspense></ProtectedRoute>} />
         <Route path="/job-tracker" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Job Tracker..." />}><JobTracker /></Suspense></ProtectedRoute>} />
+        <Route path="/outreach" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Outreach..." />}><Outreach /></Suspense></ProtectedRoute>} />
         <Route 
   path="/community" 
   element={
@@ -383,10 +398,18 @@ function AppRoutes() {
 
         
         {/* Admin Routes */}
-        <Route path="/admin" element={<AdminRoute><Suspense fallback={<LoadingScreen label="Loading Admin..." />}><AdminLayout /></Suspense></AdminRoute>}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="users" element={<AdminUsers />} />
-        </Route>
+        <Route path="/admin" element={
+            <AdminRoute>
+              <Suspense fallback={<LoadingScreen label="Loading Admin..." />}>
+                <AdminLayout />
+              </Suspense>
+            </AdminRoute>
+          }>
+            <Route index element={<AdminDashboard />} />
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="logins" element={<AdminLogins />} />
+            <Route path="bugs" element={<AdminBugs />} />
+          </Route>
 
         {/* Hub Routes */}
         <Route path="/hub/resume" element={<ProtectedRoute><Suspense fallback={<LoadingScreen label="Loading Resume Hub..." />}><ResumeHub /></Suspense></ProtectedRoute>} />
