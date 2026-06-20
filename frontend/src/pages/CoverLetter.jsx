@@ -44,9 +44,11 @@ const CoverLetter = () => {
 
   const handleSelectSavedResume = (id) => {
     if (!id) return;
-    const selected = savedResumes.find((r) => (r._id || r.id) === id);
+    // Normalize both sides to String to avoid numeric vs string strict equality mismatch
+    const selected = savedResumes.find((r) => String(r._id || r.id) === String(id));
     if (selected) {
-      const text = selected.originalText || selected.enhancedText || "";
+      // Prefer enhancedText (latest AI-improved content) over originalText
+      const text = selected.enhancedText || selected.originalText || "";
       if (!text || text.trim().length < 20) {
         setError("Selected resume has no valid text content.");
         return;
@@ -251,12 +253,12 @@ const CoverLetter = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <select
                     value={selectedResumeId}
-                    onChange={(e) => setSelectedResumeId(e.target.value)}
+                    onChange={(e) => { setSelectedResumeId(e.target.value); setError(""); }}
                     className="flex-1 bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 appearance-none"
                   >
                     <option value="">Select a saved resume...</option>
                     {savedResumes.map((resume) => (
-                      <option key={resume._id || resume.id} value={resume._id || resume.id}>
+                      <option key={resume._id || resume.id} value={String(resume._id || resume.id)}>
                         {resume.title || "Untitled Resume"}
                       </option>
                     ))}
@@ -269,6 +271,12 @@ const CoverLetter = () => {
                     Continue
                   </button>
                 </div>
+                {/* Show error inline in Step 1 so it's never silently swallowed */}
+                {error && (
+                  <p className="mt-3 text-sm text-red-400 flex items-center gap-1.5">
+                    <span>⚠</span> {error}
+                  </p>
+                )}
               </div>
             )}
 

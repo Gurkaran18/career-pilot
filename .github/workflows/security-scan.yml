@@ -32,9 +32,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --prefer-offline --legacy-peer-deps
+        working-directory: ./backend
+        run: npm install --legacy-peer-deps --prefer-offline
 
       - name: Run npm audit
+        working-directory: ./backend
         id: npm_audit
         run: |
           npm audit --json > npm-audit-report.json || true
@@ -73,9 +75,11 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci --prefer-offline --legacy-peer-deps
+        working-directory: ./backend
+        run: npm install --legacy-peer-deps --prefer-offline
 
       - name: Run Snyk to check for vulnerabilities
+        working-directory: ./backend
         uses: snyk/actions/node@master
         continue-on-error: true          # upload SARIF even if vulns found
         env:
