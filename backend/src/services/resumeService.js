@@ -8,6 +8,7 @@ export const scoreResumeText = async (resumeText, targetRole = 'Software Enginee
   // 2. Get qualitative feedback via AI
   const prompt = `Analyze this resume for a ${targetRole} position and return a JSON object with EXACTLY these fields:
 - sections: object with keys "summary", "skills", "experience", "education", "projects" — each containing:
+    - score (number, 0-100)
     - feedback (string, one concise sentence of constructive feedback)
 - topSuggestions: array of exactly 3 strings, each a specific actionable improvement tip
 
@@ -39,36 +40,53 @@ Return ONLY valid JSON. No markdown fences, no extra text.`;
     );
   }
 
+  // Validate the parsed structure
+  if (!qualitativeData || typeof qualitativeData !== 'object') {
+    throw new ApiError(502, 'AI service returned an invalid response format.');
+  }
+
+  const requiredSections = ['summary', 'skills', 'experience', 'education', 'projects'];
+  if (!qualitativeData.sections || typeof qualitativeData.sections !== 'object') {
+    throw new ApiError(502, 'AI service returned missing or invalid sections data.');
+  }
+
+  for (const key of requiredSections) {
+    const sec = qualitativeData.sections[key];
+    if (!sec || typeof sec.score !== 'number' || typeof sec.feedback !== 'string') {
+      throw new ApiError(502, `AI service returned invalid data for section: ${key}`);
+    }
+  }
+
+  if (!Array.isArray(qualitativeData.topSuggestions) || qualitativeData.topSuggestions.length !== 3 || qualitativeData.topSuggestions.some(s => typeof s !== 'string')) {
+    throw new ApiError(502, 'AI service returned invalid top suggestions format.');
+  }
+
   // 3. Map into the format expected by the frontend
   const scoreData = {
     overallScore: deterministicScoring.overallScore,
     sections: {
       summary: { 
-        score: deterministicScoring.breakdown.formatting, 
-        feedback: qualitativeData.sections?.summary?.feedback || 'Good formatting.' 
+        score: qualitativeData.sections.summary.score, 
+        feedback: qualitativeData.sections.summary.feedback
       },
       skills: { 
-        score: deterministicScoring.breakdown.skills, 
-        feedback: qualitativeData.sections?.skills?.feedback || 'Include more role-specific skills.' 
+        score: qualitativeData.sections.skills.score, 
+        feedback: qualitativeData.sections.skills.feedback
       },
       experience: { 
-        score: deterministicScoring.breakdown.experience, 
-        feedback: qualitativeData.sections?.experience?.feedback || 'Add metrics.' 
+        score: qualitativeData.sections.experience.score, 
+        feedback: qualitativeData.sections.experience.feedback
       },
       education: { 
-        score: 80, // Default good score for education
-        feedback: qualitativeData.sections?.education?.feedback || 'Good.' 
+        score: qualitativeData.sections.education.score,
+        feedback: qualitativeData.sections.education.feedback
       },
       projects: { 
-        score: deterministicScoring.breakdown.keywordMatch, 
-        feedback: qualitativeData.sections?.projects?.feedback || 'Good.' 
+        score: qualitativeData.sections.projects.score, 
+        feedback: qualitativeData.sections.projects.feedback
       }
     },
-    topSuggestions: qualitativeData.topSuggestions || [
-      'Add more quantifiable metrics to your experience.',
-      'Tailor keywords to the specific job role.',
-      'Ensure formatting is clean and easy to read.'
-    ]
+    topSuggestions: qualitativeData.topSuggestions
   };
 
   return scoreData;
